@@ -10,6 +10,7 @@ const connect = function() {
 
   conn.on('connect', () => {
     console.log('Connection established.');
+    conn.write('Name: ROK');
   });
 
   conn.on('data', (data) => {

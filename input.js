@@ -1,3 +1,14 @@
+const { 
+  MOVE_UP_KEY,
+  MOVE_DOWN_KEY,
+  MOVE_LEFT_KEY,
+  MOVE_RIGHT_KEY,
+  MOVE_UP_COMMAND,
+  MOVE_DOWN_COMMAND,
+  MOVE_RIGHT_COMMAND,
+  MOVE_LEFT_COMMAND,
+} = require('./constants');
+
 const setupInput = function(conn) {
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -13,17 +24,17 @@ const handleUserInput = function(input, conn) {
   if (input === '\u0003') {
     process.exit();
   }
-  if (input === 'w') {
-    conn.write('Move: up');
+  if (input === MOVE_UP_KEY) {
+    conn.write(MOVE_UP_COMMAND);
   }
-  if (input === 's') {
-    conn.write('Move: down');
+  if (input === MOVE_DOWN_KEY) {
+    conn.write(MOVE_DOWN_COMMAND);
   }
-  if (input === 'a') {
-    conn.write('Move: left');
+  if (input === MOVE_LEFT_KEY) {
+    conn.write(MOVE_LEFT_COMMAND);
   }
-  if (input === 'd') {
-    conn.write('Move: right');
+  if (input === MOVE_RIGHT_KEY) {
+    conn.write(MOVE_RIGHT_COMMAND);
   }
   if (input === 'p') {
     conn.write('Say: It\s ME!');

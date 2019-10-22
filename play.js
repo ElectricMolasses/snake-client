@@ -6,15 +6,15 @@ const setupInput = function() {
   stdin.setEncoding('utf8');
   stdin.resume();
   stdin.on('data', (key) => {
-    if (key === '\u0003') {
-      process.exit();
-    }
+    handleUserInput(key);
   });
   return stdin;
 };
 
-const handleUserInput = function() {
-  
+const handleUserInput = function(input) {
+  if (input === '\u0003') {
+    process.exit();
+  }
 };
 
 console.log('Connecting ...');

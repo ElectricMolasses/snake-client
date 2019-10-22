@@ -25,6 +25,9 @@ const handleUserInput = function(input, conn) {
   if (input === 'd') {
     conn.write('Move: right');
   }
+  if (input === 'p') {
+    conn.write('Say: It\s ME!');
+  }
 };
 
 module.exports = {

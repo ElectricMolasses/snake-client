@@ -8,6 +8,10 @@ const connect = function() {
 
   conn.setEncoding('utf8');
 
+  conn.on('connect', () => {
+    console.log('Connection established.');
+  });
+
   conn.on('data', (data) => {
     console.log(data);
   });
